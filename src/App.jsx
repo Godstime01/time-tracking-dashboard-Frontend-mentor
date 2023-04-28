@@ -1,7 +1,7 @@
 import { useEffect, createContext, useReducer } from 'react';
 import Profile from "./components/Profile";
 import Category from "./components/Category";
-import data from "./assets/data.json";
+import data from "./data.json";
 
 export const ContextProvider = createContext()
 
@@ -33,9 +33,9 @@ function App() {
   return (
     <ContextProvider.Provider value={{ schState: state, schDispatch: dispatch }} >
 
-      <main className='container mx-auto px-4 mt-20 sm:mt-0 flex flex-col gap-3 sm:flex-row items-stretch'>
+      <main className='container mx-auto px-4 mt-20 sm:mt-0 flex flex-col gap-3 sm:flex-row items-stretch justify-stretch h-auto'>
         <Profile />
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-5'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-x-[1rem] md:gap-y-[3rem]'>
           {
             data.map((category, index) => {
               return <Category key={index} title={category.title} timeframes={category.timeframes} others={[category.icon, category.color]} />

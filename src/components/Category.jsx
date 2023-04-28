@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import threedots from "../assets/images/icon-ellipsis.svg";
+import threedots from "/images/icon-ellipsis.svg";
 import { ContextProvider } from '../App';
 
 const Category = (props) => {
@@ -22,9 +22,7 @@ const Category = (props) => {
 
   return (
     <div className='relative'>
-      <div className={`w-full h-40 absolute z-10 rounded-md -translate-y-8 flex justify-end bg-${color}`} >
-        <img src={icon} className='w-10 h-10 translate-y-3' alt="" />
-      </div>
+      
       <div className={`p-5 bg-blue-500 text-[white] shadow-2xl w-full h-40 z-20 relative rounded-md grid grid-cols-2`}>
 
         <h3>{props.title}</h3>
@@ -35,6 +33,9 @@ const Category = (props) => {
             <span >{comment}</span>-<span>{timeframes.previous}</span>
           </span>
         </div>
+      </div>
+      <div className={`w-full h-40 z-10 -translate-y-4 rounded-md absolute top-0 flex justify-end ${props.others[1]}`} >
+        <img src={icon} className='w-10 h-10 ' alt="" />
       </div>
     </div>
   )
